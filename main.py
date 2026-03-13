@@ -1,11 +1,11 @@
 from fastapi import FastAPI
-
+key = "placeholder"
 app = FastAPI()
-
-@app.get("/")
+@app.get("/read")
 def read_root():
-    return {"message": "Hello from Render!"}
+    return {"key": key}
 
 @app.get("/add")
 def add(q: str):
+    key = q
     return {"received": q}
